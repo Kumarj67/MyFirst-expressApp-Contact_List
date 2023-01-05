@@ -11,21 +11,21 @@ app.set('view engine','ejs');
 
  app.use(express.urlencoded());
 
- app.use(express.static('asset'))
+ app.use(express.static('asset'));
 
 
-//  Middleware-1
-app.use(function(req,res,next){
-// console.log('middleware-1 called');
-req.myName='Jeetesh'
-next();
-});
-// middleware-2
-app.use(function(req,res,next){
-    // console.log('middleware-2 called');
-    console.log('my-Name from MDW-2',req.myName)
-    next();
-})
+// //  Middleware-1
+// app.use(function(req,res,next){
+// // console.log('middleware-1 called');
+// req.myName='Jeetesh'
+// next();
+// });
+// // middleware-2
+// app.use(function(req,res,next){
+//     // console.log('middleware-2 called');
+//     console.log('my-Name from MDW-2',req.myName)
+//     next();
+// })
 
  
  var contactList=[{
