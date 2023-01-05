@@ -13,12 +13,14 @@ app.set('view engine','ejs');
 
 //  Middleware-1
 app.use(function(req,res,next){
-console.log('middleware-1 called');
+// console.log('middleware-1 called');
+req.myName='Jeetesh'
 next();
 });
 // middleware-2
 app.use(function(req,res,next){
-    console.log('middleware-2 called');
+    // console.log('middleware-2 called');
+    console.log('my-Name from MDW-2',req.myName)
     next();
 })
 
@@ -38,6 +40,7 @@ app.use(function(req,res,next){
 ]
 
 app.get('/home',function(req,res){
+    console.log('from the get route controller',req.myName);
 
     // res.send('<h1>Cool! it is running? or it is</h1>');
     return res.render('home',
