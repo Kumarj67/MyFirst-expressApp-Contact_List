@@ -5,24 +5,27 @@ const path=require('path')
 const port=8800;
 const app=express();
 
+
 app.set('view engine','ejs');
  app.set('views',path.join(__dirname,'views'));
 
  app.use(express.urlencoded());
 
+ app.use(express.static('asset'));
 
-//  Middleware-1
-app.use(function(req,res,next){
-// console.log('middleware-1 called');
-req.myName='Jeetesh'
-next();
-});
-// middleware-2
-app.use(function(req,res,next){
-    // console.log('middleware-2 called');
-    console.log('my-Name from MDW-2',req.myName)
-    next();
-})
+
+// //  Middleware-1
+// app.use(function(req,res,next){
+// // console.log('middleware-1 called');
+// req.myName='Jeetesh'
+// next();
+// });
+// // middleware-2
+// app.use(function(req,res,next){
+//     // console.log('middleware-2 called');
+//     console.log('my-Name from MDW-2',req.myName)
+//     next();
+// })
 
  
  var contactList=[{
